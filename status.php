@@ -1,4 +1,13 @@
 <?php
+// Payeer 商户后台中的 Secret Key
+$secretKey = "Nq4C6hvC"; // 请将此处替换为你实际的 Secret Key
+
+// 验证 Secret Key
+if ($_POST['secret_key'] !== $secretKey) {
+    echo "Invalid Secret Key";
+    exit;
+}
+
 // 收件人邮箱地址
 $to = "lau240708@outlook.com";
 
@@ -20,6 +29,6 @@ $message .= "Date: $date\n";
 // 发送邮件
 mail($to, $subject, $message);
 
-// 确保 Payeer 能收到响应
+// 确认 Payeer 能收到响应
 echo "Notification sent!";
 ?>
