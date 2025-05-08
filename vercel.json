@@ -1,8 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.php": {
+    "api/*.php": {
       "runtime": "now-php@1.0.0"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
