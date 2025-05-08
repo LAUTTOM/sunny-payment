@@ -4,5 +4,11 @@
     "api/*.php": {
       "runtime": "@vercel/php"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
 }
