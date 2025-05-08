@@ -1,4 +1,8 @@
-<?php
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo "Method Not Allowed";
+    exit;
+}<?php
 // 检查请求方法是否为 POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
