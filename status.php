@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $secretKey = "Nq4C6hvC"; // 请将此处替换为你的实际 Secret Key
 
 // 验证 Secret Key
-if ($_POST['secret_key'] !== $secretKey) {
+if (!isset($_POST['secret_key']) || $_POST['secret_key'] !== $secretKey) {
     echo "Invalid Secret Key";
     exit;
 }
