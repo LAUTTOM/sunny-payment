@@ -1,8 +1,4 @@
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo "Method Not Allowed";
-    exit;
-}<?php
+<?php
 // 检查请求方法是否为 POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -11,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Payeer 商户后台中的 Secret Key
-$secretKey = "Nq4C6hvC"; // 将此处替换为你的实际 Secret Key
+$secretKey = "你的SecretKey"; // 请将此处替换为你的实际 Secret Key
 
 // 验证 Secret Key
 if ($_POST['secret_key'] !== $secretKey) {
@@ -41,5 +37,5 @@ $message .= "Date: $date\n";
 mail($to, $subject, $message);
 
 // 确认 Payeer 能收到响应
-echo "Notification sent";
+echo "Notification sent!";
 ?>
