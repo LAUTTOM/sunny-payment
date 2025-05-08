@@ -2,15 +2,9 @@
   "version": 2,
   "functions": {
     "api/**/*.php": {
-      "runtime": "now-php@1.0.0"
+      "runtime": "vercel-php@1.0.0"
     }
   },
-  "builds": [
-    {
-      "src": "api/**/*.php",
-      "use": "@vercel/php"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
